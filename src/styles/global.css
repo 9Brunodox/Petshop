@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: var(--ff-base);
+}
+
+:root {
+  /* Content */
+  --content-primary: #ffffff;
+  --content-secondary: #98959d;
+  --content-tertiary: #666666;
+  --content-brand: #9282fa;
+
+  /* Background */
+  --bg-primary: #151515;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #23242c;
+  --bg-brand: #9282fa;
+  --bg-highlights: #bdb4fa;
+
+  /* Border */
+  --border-primary: #3e3c41;
+  --border-secondary: #86818c;
+  --border-brand: #9282fa;
+  --border-divisor: #353339;
+
+  /* Accent */
+  --accent-blue: #027df0;
+  --accent-blue-light: #16487a;
+  --accent-yellow: #f0dc02;
+  --accent-yellow-light: #756e1b;
+  --accent-orange: #f09102;
+  --accent-orange-light: #75501b;
+
+  /* Base font-family */
+  --ff-base: "Inter", sans-serif;
+  --ff-inter-tight: "Inter Tight", serif;
+
+  /* Font sizes */
+  --fs-title: 2.4rem; /* 24px */
+  --fs-paragraph-md: 1.4rem; /* 14px */
+  --fs-paragraph-sm: 1.2rem; /* 12px */
+  --fs-label-lg: 1.6rem; /* 16px */
+  --fs-label-md: 1.4rem; /* 14px */
+  --fs-label-sm: 1.2rem; /* 12px */
+  --fs-link: 1.2rem; /* 12px */
+
+  /* Line heights */
+  --lh-title: 3.2rem;
+  --lh-paragraph-md: 2.4rem; /* 24px */
+  --lh-paragraph-sm: 1.6rem; /* 16px */
+  --lh-label-lg: 2.4rem; /* 24px */
+  --lh-label-md: 2.4rem; /* 24px */
+  --lh-label-sm: 1.6rem; /* 16px */
+  --lh-link: 1.6rem; /* 16px */
+
+  
+  /* Font weights */
+  --fw-bold: 700;
+  --fw-sb: 600;
+  --fw-md: 500;
+  --fw-sm: 400;
+  
+  --title: var(--fw-bold) var(--fs-title)/var(--lh-title) var(--ff-inter-tight);
+}
+
+body {
+  background-color: #14151d;
+}
+
+.appName {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #2e2c30;
+  color: var(--border-brand);
+  padding: 1.4rem 2rem;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  text-align: center;
+  border-bottom-right-radius: 1.2rem;
+  & img {
+    width: 2rem;
+    height: 2rem;
+    color: var(--border-brand);
+  }
+  & span {
+    font-family: "Familjen Grotesk", sans-serif;
+    font-size: var(--fs-label-lg);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+  }
+}
+
+#new-schedule {
+  position: absolute;
+  bottom: 3.3rem;
+  right: 3rem;
+  padding: 1.2rem 2.4rem;
+  font-family: var(--ff-inter-tight);
+  font-size: var(--fs-label-lg);
+  font-weight: var(--fw-bold);
+  color: #050505;
+  text-transform: uppercase;
+  border-radius: 0.8rem;
+  background-color: var(--content-brand);
+  box-shadow: 0 0 4rem rgba(146, 130, 250, 0.3);
+  border: none;
+  &:hover{
+    scale: 1.01;
+  }
+}
