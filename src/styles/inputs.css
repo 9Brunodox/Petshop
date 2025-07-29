@@ -1,0 +1,37 @@
+input[type="date"] {
+  all: unset;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"] {
+  all: unset;
+  border: 1px solid var(--border-primary);
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+}
+
+textarea {
+  all: unset;
+  border: 1px solid var(--border-primary);
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  height: 8.3rem;
+}
+
+@-moz-document url-prefix() {
+  .input i {
+    display: none;
+  }
+
+  .input-wrapper.date-only .icon {
+    display: none !important;
+  }
+
+  .input-wrapper.date-only::after {
+    display: none !important;
+  }
+}

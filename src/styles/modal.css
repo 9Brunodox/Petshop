@@ -1,0 +1,159 @@
+.modal {
+  display: flex;
+  position: fixed; /* Fixa o modal sobre a tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  background-color: rgba(0, 0, 0, 0.2); /* Camada escura */
+  backdrop-filter: blur(12px); /* Embaça o conteúdo de fundo */
+  z-index: 1000; /* Coloca sobre o restante do conteúdo */
+}
+
+.modal-schedule {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 47.7rem;
+  height: 71.6rem;
+  border-radius: 1.2rem;
+  background-color: #23242c;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin: 3.75rem 4rem 2.8rem 4rem;
+  & h2 {
+    font: var(--title);
+  }
+  & p {
+    font: var(--paragraph-md);
+    color: var(--content-secondary);
+  }
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 4rem;
+  gap: 1.6rem;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  & label {
+    font: var(--label-md);
+    font-weight: var(--fw-bold);
+  }
+}
+
+.dateAndHours {
+  display: flex;
+  flex-direction: row; /* Garante que os itens fiquem lado a lado */
+  gap: 1.6rem; /* Espaçamento entre os dois campos */
+  width: 100%;
+}
+
+.input-icon {
+  flex: 1; /* Faz os dois ocuparem 50% cada */
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0; /* Importante para prevenir quebra em telas menores */
+}
+
+.input-icon label {
+  font: var(--label-md);
+  font-weight: var(--fw-bold);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--surface-primary); /* ou #1f1f27 */
+  border: 1px solid var(--border-primary); /* cor suave */
+  border-radius: 0.8rem;
+  padding-left: 3.2rem; /* espaço pro ícone */
+  height: 4.8rem;
+}
+
+.input-wrapper input[type="date"],
+.input-wrapper input[type="time"] {
+  width: 100%;
+  height: 100%;
+  padding-right: 1.2rem;
+  background: transparent;
+  border: none;
+  color: var(--content-secondary);
+  font: var(--paragraph-md);
+  outline: none;
+  appearance: none; /* remove setas padrões */
+  cursor: pointer;
+}
+
+/* Ícone dentro do input */
+.input-wrapper .icon {
+  position: absolute;
+  left: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Corrige aparência em Firefox */
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.input-wrapper input[type="time"] {
+    padding-left: .8rem;
+  }
+  
+
+#confirmSchedule {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  width: 13rem;
+  text-align: center;
+  align-items: end;
+  padding: 1.6rem 1.2rem;
+}
+
+.footer-button {
+  display: flex;
+  justify-content: flex-end; /* empurra o botão para a direita */
+  margin-top: 1.8rem; /* empurra para baixo */
+}
+
+.input-wrapper input[type="date"]::-webkit-calendar-picker-indicator,
+.input-wrapper input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: auto; /* Mantém o clique funcionando */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Adiciona a seta como um ícone visual via ::after */
+.input-wrapper::after {
+  content: "";
+  background: url("../assets/arrow-down.svg") no-repeat center;
+  background-size: 1.2rem;
+  position: absolute;
+  right: 1.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  pointer-events: none; /* Permite clicar no input normalmente */
+}
