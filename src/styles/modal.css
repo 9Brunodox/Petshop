@@ -12,12 +12,12 @@
   z-index: 1000; /* Coloca sobre o restante do conteúdo */
 }
 
-.modal-schedule {
+.modal-content {
   display: flex;
   flex-direction: column;
   color: white;
   width: 47.7rem;
-  height: 71.6rem;
+  height: 74rem;
   border-radius: 1.2rem;
   background-color: #23242c;
 }
@@ -31,7 +31,7 @@
     font: var(--title);
   }
   & p {
-    font: var(--paragraph-md);
+    font: var(--font-paragraph-md);
     color: var(--content-secondary);
   }
 }
@@ -43,13 +43,15 @@
   gap: 1.6rem;
 }
 
-.input-form {
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   & label {
-    font: var(--label-md);
-    font-weight: var(--fw-bold);
+    font: var(--font-label-md);
+  }
+  & input[type="text"] {
+    font: var(--font-paragraph-md);
   }
 }
 
@@ -69,8 +71,7 @@
 }
 
 .input-icon label {
-  font: var(--label-md);
-  font-weight: var(--fw-bold);
+  font: var(--font-label-md);
 }
 
 .input-wrapper {
@@ -93,7 +94,7 @@
   background: transparent;
   border: none;
   color: var(--content-secondary);
-  font: var(--paragraph-md);
+  font: var(--font-paragraph-md);
   outline: none;
   appearance: none; /* remove setas padrões */
   cursor: pointer;
@@ -107,18 +108,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* Corrige aparência em Firefox */
-input[type="time"]::-webkit-calendar-picker-indicator,
-input[type="date"]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.input-wrapper input[type="time"] {
-    padding-left: .8rem;
-  }
-  
 
 #confirmSchedule {
   position: relative;
@@ -136,10 +125,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 1.8rem; /* empurra para baixo */
 }
 
-.input-wrapper input[type="date"]::-webkit-calendar-picker-indicator,
-.input-wrapper input[type="time"]::-webkit-calendar-picker-indicator {
+.input-wrapper > input[type="date"]::-webkit-calendar-picker-indicator,
+.input-wrapper > input[type="time"]::-webkit-calendar-picker-indicator {
   opacity: 0;
-  pointer-events: auto; /* Mantém o clique funcionando */
+  pointer-events: auto;
   position: absolute;
   width: 100%;
   height: 100%;

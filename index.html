@@ -11,40 +11,40 @@
     />
   </head>
   <body>
-    <div class="appName">
+    <div id="brand">
       <img src="./src/assets/dog.svg" alt="" />
       <span>PETDAY</span>
     </div>
-    <button id="new-schedule" class="buttonSchedule">NOVO AGENDAMENTO</button>
+    <button id="new-schedule" class="btn-primary">NOVO AGENDAMENTO</button>
     <main>
-      <div class="schedule-box">
+      <div class="schedule-container">
         <header>
-          <div class="header-text">
+          <div class="schedule-period-header-text">
             <span>Sua Agenda</span>
             <p>
               Aqui você pode ver todos os clientes e serviços agendados para
               hoje.
             </p>
           </div>
-          <div class="input">
+          <div id="input-current-date">
             <i><img src="./src/assets/calendar.svg" alt="" /></i>
-            <input type="date" id="date" />
+            <input type="date" id="schedule-date" /> 
           </div>
         </header>
         <div id="schedule-content">
-          <div class="schedule-time morning">
-            <header class="schedule-header">
+          <div class="schedule-period morning">
+            <header class="schedule-period-header">
               <div class="timeHeader-1">
                 <i><img src="./src/assets/sun-fog.svg" alt="" /></i>
                 <span>Manhã</span>
               </div>
               <span class="timeHeader-2"> 09h-12h </span>
             </header>
-            <div class="schedules">
+            <div class="schedule-list">
               <ul>
                 <li class="schedule-item">
                   <div>
-                    <span class="schedule-time">09:00</span>
+                    <span class="schedule-period">09:00</span>
                     <span class="schedule-client"
                       ><strong>Thor</strong> / Fernanda Costa</span
                     >
@@ -55,19 +55,19 @@
               </ul>
             </div>
           </div>
-          <div class="schedule-time afternoon">
-            <header class="schedule-header">
+          <div class="schedule-period afternoon">
+            <header class="schedule-period-header">
               <div class="timeHeader-1">
                 <i><img src="./src/assets/afternoon.svg" alt="" /></i>
                 <span>Tarde</span>
               </div>
               <span class="timeHeader-2"> 13h-18h </span>
             </header>
-            <div class="schedules">
+            <div class="schedule-list">
               <ul>
                 <li class="schedule-item">
                   <div>
-                    <span class="schedule-time">09:00</span>
+                    <span class="schedule-period">09:00</span>
                     <span class="schedule-client"
                       ><strong>Thor</strong> / Fernanda Costa</span
                     >
@@ -78,19 +78,19 @@
               </ul>
             </div>
           </div>
-          <div class="schedule-time afternoon">
-            <header class="schedule-header">
+          <div class="schedule-period afternoon">
+            <header class="schedule-period-header">
               <div class="timeHeader-1">
                 <i><img src="./src/assets/night.svg" alt="" /></i>
                 <span>Noite</span>
               </div>
               <span class="timeHeader-2"> 19h-21h </span>
             </header>
-            <div class="schedules">
+            <div class="schedule-list">
               <ul>
                 <li class="schedule-item">
                   <div>
-                    <span class="schedule-time">09:00</span>
+                    <span class="schedule-period">09:00</span>
                     <span class="schedule-client"
                       ><strong>Thor</strong> / Fernanda Costa</span
                     >
@@ -103,35 +103,35 @@
           </div>
       </div>
     </main>
-    <div class="modal">
-       <div class="modal-schedule">
+    <div class="modal disabled">
+       <div class="modal-content">
         <header class="modal-header">
           <h2>Agende um atendimento</h2>
           <p>Preencha os dados do cliente para realizar o agendamento:</p>
         </header>
         <form action="" class="modal-form">
 
-          <div class="input-form">
+          <div class="form-group">
             <label for="">Nome do tutor</label>
             <input type="text">
           </div>
 
-          <div class="input-form">
+          <div class="form-group">
             <label for="">Nome do pet</label>
             <input type="text">
           </div>
 
-          <div class="input-form">
+          <div class="form-group">
             <label for="">Telefone</label>
             <input type="tel">
           </div>
 
-          <div class="input-form">
+          <div class="form-group">
             <label for="">Descrição do serviço</label>
             <textarea name="" id=""></textarea>
           </div>
 
-          <div class="input-form dateAndHours">
+          <div class="form-group dateAndHours">
             <!-- Data -->
             <div class="input-icon">
               <label for="data">Data</label>
@@ -143,18 +143,17 @@
           
             <!-- Hora -->
             <div class="input-icon">
-              <label for="hora">Hora</label>
+              <label for="modal-time">Hora</label>
               <div class="input-wrapper">
                 <i class="icon"><img src="./src/assets/clock-circle.svg" alt="Relógio"></i>
-                <input type="time" id="hora" name="hora" required>
+                <input type="time" id="modal-time" name="modal-time" required>
               </div>
             </div>
           </div>
           
           <div class="footer-button">
-            <button id="confirmSchedule" class="buttonSchedule">AGENDAR</button>
+            <button id="confirmSchedule" class="btn-primary">AGENDAR</button>
           </div>
-          
 
         </form>
        </div>

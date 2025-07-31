@@ -2,7 +2,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  & .schedule-box {
+  & .schedule-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@ main {
       display: flex;
       gap: 6rem;
       padding: 4.8rem 0;
-      & .header-text {
+      & .schedule-period-header-text {
         display: flex;
         flex-direction: column;
         gap: 0.4rem;
@@ -22,54 +22,11 @@ main {
         }
         & p {
           color: var(--content-secondary);
-          font: var(--fw-md) var(--fs-paragraph-md) / var(--lh-paragraph-md)
-            var(--ff-base);
+          font: var(--font-paragraph-md);
         }
       }
     }
   }
-}
-
-.input {
-  margin-top: 1rem;
-  height: 4.8rem;
-  border: 1px solid var(--border-primary);
-  border-radius: 0.8rem;
-  padding: 1.6rem 2.4rem;
-
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  & i {
-    margin-top: 0.2rem;
-    align-items: flex-start;
-    height: 2rem;
-    width: 2rem;
-  }
-
-  & input[type="date"] {
-    position: relative;
-    flex: 1;
-
-    font-size: 1rem;
-    color: var(--content-secondary);
-    font-family: var(--ff-base);
-    font-weight: var(--fw-md);
-    font-size: var(--fs-label-lg);
-    background-color: transparent;
-
-    outline: none;
-    border: none;
-  }
-}
-
-::-webkit-calendar-picker-indicator {
-  position: absolute;
-  top: 0.3rem;
-  right: -0.5rem;
-  cursor: pointer;
-  background: url("../assets/arrow-down.svg") no-repeat;
 }
 
 #schedule-content {
@@ -81,13 +38,13 @@ main {
   height: 100%;
 }
 
-.schedule-time {
+.schedule-period {
   display: flex;
   flex-direction: column;
   background-color: var(--bg-tertiary);
   border-radius: 1rem;
 
-  & .schedule-header {
+  & .schedule-period-header {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
@@ -101,8 +58,7 @@ main {
       margin-left: 2rem;
       gap: 1.2rem;
       color: var(--content-primary);
-      font: var(--fw-bold) var(--fs-label-lg) / var(--lh-label-lg)
-        var(--ff-base);
+      font: var(--font-label-lg);
 
       & i {
         margin-top: 0.5rem;
@@ -116,12 +72,11 @@ main {
     & .timeHeader-2 {
       margin-right: 2rem;
       color: var(--content-secondary);
-      font: var(--fw-bold) var(--fs-label-lg) / var(--lh-label-lg)
-        var(--ff-base);
+      font: var(--font-label-lg);
     }
   }
 
-  & .schedules {
+  & .schedule-list {
     flex: 1 1 60%;
     padding: 2rem;
     justify-content: space-between;
@@ -131,17 +86,15 @@ main {
       display: flex;
       justify-content: space-between;
       color: var(--content-secondary);
-      font: var(--fw-sm) var(--fs-paragraph-sm) / var(--lh-label-sm)
-        var(--ff-base);
+      font: var(--font-paragraph-sm);
 
       & div {
         display: flex;
         gap: 1.6rem;
-        & .schedule-time,
+        & .schedule-period,
         strong {
           color: var(--content-primary);
-          font: var(--fw-bold) var(--fs-label-sm) / var(--lh-label-sm)
-            var(--ff-base);
+          font: var(--font-label-sm);
         }
       }
 
