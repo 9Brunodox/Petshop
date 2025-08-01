@@ -7,8 +7,8 @@ newScheduleBtn.addEventListener("click", () => {
 });
 
 // Fechar o modal quando clicar fora dele ou no botão de fechar
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
     modal.classList.add("disabled");
   }
 });

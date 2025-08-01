@@ -66,6 +66,14 @@ li {
   list-style-type: none;
 }
 
+.hour-available {
+  color: var(--content-primary);
+}
+.hour-unavailable {
+  opacity: 0.5;
+}
+
+
 ::-webkit-calendar-picker-indicator {
   cursor: pointer;
   background: url("../assets/arrow-down.svg") no-repeat;
@@ -120,6 +128,6 @@ button {
   }
 }
 
-.disabled{
+.disabled {
   display: none !important;
 }

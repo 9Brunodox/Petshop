@@ -144,15 +144,16 @@
             <!-- Hora -->
             <div class="input-icon">
               <label for="modal-time">Hora</label>
-              <div class="input-wrapper">
+              <div class="input-wrapper hours-available">
                 <i class="icon"><img src="./src/assets/clock-circle.svg" alt="Relógio"></i>
-                <input type="time" id="modal-time" name="modal-time" required>
+                <select name="modal-time" id="modal-time">
+                </select>
               </div>
             </div>
           </div>
           
           <div class="footer-button">
-            <button id="confirmSchedule" class="btn-primary">AGENDAR</button>
+            <button type="submit" id="confirmSchedule" class="btn-primary">AGENDAR</button>
           </div>
 
         </form>
