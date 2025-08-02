@@ -1,38 +1,39 @@
-import { openingHours } from "../../utils/opening-hours.js";
 import dayjs from "dayjs";
+import { openingHours } from "../../utils/opening-hours.js";
 
 const hours = document.getElementById("modal-time");
 
-export function hoursLoad({ date }) {
-  // Limpa a lista de horários
-  hours.innerHTML = `<option value="">Selecione o valor</option>`;
-  const opening = openingHours.map((hour) => {
-    // Recupera somente a hora.
-    const [scheduleHour] = hour.split(":");
 
-    // Adicionaa a hora na date e verifica se está no passado.
-    const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
-    
-    return{
-        hour,
-        available: !isHourPast,
-    }
+export function hoursLoad({date}){
 
-  });
+    // Limpa a lista de horários
+    hours.innerHTML = `<option value="">Selecione o valor</option>`;
 
-  // Renderiza os horários.
-  opening.forEach(({hour, available}) => {
-    const option = document.createElement("option")
-    option.classList.add(available ?"hour-available" : "hour-unavailable")
+    const opening = openingHours.map((hour) =>{
 
-    if(!available){
-        option.disabled = true;
-    }
+        // Splita o horário e retorna somente a hora sem os minutos
+        const [scheduleHour] = hour.split(":");
 
-    option.textContent = hour;
+        // Adiciona a hora na data e verifica se está no passado.
+        const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
 
-    hours.append(option)
-  });
+        return{
+            hour,
+            available: !isHourPast,
+        }
+    });
 
+    opening.map(({hour, available}) =>{
+        const option = document.createElement("option")
+        option.classList.add(available ? "hour-available" : "hour-unavailable")
+
+        if(!available){
+            option.disabled = true;
+        }
+
+        option.textContent = hour;
+
+        hours.append(option)
+
+    })
 }
-

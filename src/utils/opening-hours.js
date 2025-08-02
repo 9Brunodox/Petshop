@@ -1,5 +1,4 @@
 export const openingHours = [
-  "00:30",
   "08:00",
   "09:00",
   "10:00",

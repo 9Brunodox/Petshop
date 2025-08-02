@@ -1,19 +1,17 @@
 import dayjs from "dayjs";
 
-
-const form = document.querySelector("form");
-const selectedDate = document.getElementById("schedule-date") //Utilizando o query porque só existe apenas um FORM
-
-//Carrega a data Atual automatizada.
+const form = document.querySelector("form")
 const today = dayjs(new Date()).format("YYYY-MM-DD");
 
-// Define a data atual para hoje
-selectedDate.value = today
+const selectedDate = document.getElementById("schedule-date");
+const createDate = document.getElementById("data");
 
-// Define a data mínima como sendo a data atual.
-selectedDate.min = today
+createDate.min = today;
+createDate.value = today;
 
+selectedDate.min = today;
+selectedDate.value = today;
 
 form.onsubmit = (e) =>{
-  e.preventDefault()
+    e.preventDefault()
 }
