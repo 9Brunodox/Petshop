@@ -6,7 +6,7 @@ const createDate = document.getElementById("data");
 
 
 // Data do modal
-export function scheduleDay() {
+export async function scheduleDay() {
   // Renderiza as horas disponíveis
   const date = createDate.value;
   hoursLoad({ date });
