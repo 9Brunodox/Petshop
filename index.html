@@ -41,8 +41,8 @@
               <span class="timeHeader-2"> 09h-12h </span>
             </header>
             <div class="schedule-list">
-              <ul>
-                <li class="schedule-item">
+              <ul id="schedules-morning">
+                <!-- <li class="schedule-item">
                   <div>
                     <span class="schedule-period">09:00</span>
                     <span class="schedule-client"
@@ -51,7 +51,7 @@
                   </div>
                   <span class="schedule-service">Vacinação</span>
                   <button class="schedule-remove">Remover agendamento</button>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -64,15 +64,15 @@
               <span class="timeHeader-2"> 13h-18h </span>
             </header>
             <div class="schedule-list">
-              <ul>
-                <li class="schedule-item">
+              <ul id="schedules-afternoon">
+                <!-- <li class="schedule-item">
                   <div>
                     <span class="schedule-period">09:00</span>
                     <span class="schedule-client"><strong>Thor</strong> / Fernanda Costa</span>
                   </div>
                   <span class="schedule-service">Vacinação</span>
                   <button class="schedule-remove">Remover agendamento</button>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -85,8 +85,8 @@
               <span class="timeHeader-2"> 19h-21h </span>
             </header>
             <div class="schedule-list">
-              <ul>
-                <li class="schedule-item">
+              <ul id="schedules-night">
+                <!-- <li class="schedule-item">
                   <div>
                     <span class="schedule-period">09:00</span>
                     <span class="schedule-client"
@@ -95,7 +95,7 @@
                   </div>
                   <span class="schedule-service">Vacinação</span>
                   <button class="schedule-remove">Remover agendamento</button>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -110,23 +110,23 @@
         <form action="" class="modal-form">
 
           <div class="form-group">
-            <label for="">Nome do tutor</label>
-            <input type="text">
+            <label for="tutorName">Nome do tutor</label>
+            <input type="text" id="tutorName" placeholder="Digite o nome do tutor">
           </div>
 
           <div class="form-group">
-            <label for="">Nome do pet</label>
-            <input type="text">
+            <label for="petName">Nome do pet</label>
+            <input type="text" id="petName" placeholder="Digite o nome do pet">
           </div>
 
           <div class="form-group">
-            <label for="">Telefone</label>
-            <input type="tel">
+            <label for="phoneNumber">Telefone</label>
+            <input type="tel" maxlength="15" id="phoneNumber" placeholder="(XX) XXXXX-XXXX">
           </div>
 
           <div class="form-group">
-            <label for="">Descrição do serviço</label>
-            <textarea name="" id=""></textarea>
+            <label for="description">Descrição do serviço</label>
+            <textarea name="" id="description" placeholder="Descreva o que deseja no serviço"></textarea>
           </div>
 
           <div class="form-group dateAndHours">

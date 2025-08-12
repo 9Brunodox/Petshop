@@ -1,41 +1,43 @@
 import dayjs from "dayjs";
+import { hoursClick } from "./hours-click.js";
 import { openingHours } from "../../utils/opening-hours.js";
 
-const hours = document.getElementById("modal-time");
+const selectHours = document.getElementById("modal-time");
 
+export function hoursLoad({ date, dailySchedules }) {
+  // Limpa a lista de horários;
+  selectHours.innerHTML = `<option value="" disabled>Selecione o valor</option>`;
 
-export function hoursLoad({date}){
+  const unavailable = dailySchedules.map((schedule) =>
+    dayjs(schedule.when).format("HH:mm")
+  );
 
-    // Limpa a lista de horários
-    hours.innerHTML = `<option value="">Selecione o valor</option>`;
+  const opening = openingHours.map((hour) => {
+    // Recupera somente a hora
+    const [scheduleHour] = hour.split(":");
 
-    const opening = openingHours.map((hour) =>{
+    const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
 
-        // Splita o horário e retorna somente a hora sem os minutos
-        const [scheduleHour] = hour.split(":");
+    const available = !unavailable.includes(hour) && !isHourPast;
 
-        // Adiciona a hora na data e verifica se está no passado.
-        const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
+    return {
+      hour,
+      available,
+    };
+  });
 
-        const isDateFuture = dayjs(date).isAfter();
+  opening.forEach(({ hour, available }) => {
+    const option = document.createElement("option");
+    option.classList.add(available ? "hour-available" : "hour-unavailable");
 
-        return{
-            hour,
-            available: !isHourPast,
-        }
-    });
+    if (!available) {
+      option.disabled = true;
+    }
 
-    opening.map(({hour, available}) =>{
-        const option = document.createElement("option")
-        option.classList.add(available ? "hour-available" : "hour-unavailable")
+    option.textContent = hour;
 
-        if(!available){
-            option.disabled = true;
-        }
+    selectHours.append(option);
+  });
 
-        option.textContent = hour;
-
-        hours.append(option)
-
-    })
+  hoursClick();
 }

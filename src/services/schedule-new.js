@@ -2,31 +2,30 @@ import { apiConfig } from "./api-config";
 
 export async function scheduleNew({
     id,
-    userName,
-    namePet,
+    username,
+    petname,
     cleanedNumber,
     serviceDescription,
     when,
-}){
+}) {
     try {
-        // Fazendo a requisição para enviar os dados do agendamento.
-        await fetch(`${apiConfig.baseURL/schedules}`,{
+        await fetch(`${apiConfig.baseURL}/schedules`, {
             method: 'POST',
             header: {
-                "Content-Type": "application/json",
+                'Content-Type': "application/json"
             },
             body: JSON.stringify({
                 id,
-                userName,
-                namePet,
+                username,
+                petname,
                 cleanedNumber,
                 serviceDescription,
                 when,
             })
         })
-        // Exibe mensagem de agendamento realizado.
-        alert("Agendamento realizado!")
+        alert("Agendamento realizado com sucesso!")
     } catch (error) {
         console.log(error)
+        alert("Não foi possível realizar o agendamento!")
     }
 }

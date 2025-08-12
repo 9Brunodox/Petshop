@@ -1,13 +1,27 @@
-import { hoursLoad } from "../form/hours-load";
-import dayjs from "dayjs";
+import { hoursLoad } from "../form/hours-load.js";
+import { scheduleShow } from "./show.js";
+import { fetchScheduleByDay } from "../../services/fetch-schedule-by-day.js";
 
+const schedulesDate = document.getElementById("schedule-date");
+const newSchedulesDate = document.getElementById("data");
 
-const createDate = document.getElementById("data");
+export async function schedulesDay() {
+  //Obtém a data do input
+  const date = newSchedulesDate.value;
 
+  // Busca na API os agendamentos
+  const dailySchedules = await fetchScheduleByDay({ date });
 
-// Data do modal
-export async function scheduleDay() {
-  // Renderiza as horas disponíveis
-  const date = createDate.value;
-  hoursLoad({ date });
+  // Busca na API os agendamentos para carregar
+  hoursLoad({ date, dailySchedules });
+}
+
+export async function searchSchedules() {
+  const date = schedulesDate.value;
+
+  const dailySchedules = await fetchScheduleByDay({ date });
+
+  // Exibe os agendamentos
+  scheduleShow({ dailySchedules });
+
 }

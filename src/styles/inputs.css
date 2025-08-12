@@ -42,7 +42,10 @@ input[type="date"] {
   all: unset;
   border: 1px solid var(--border-primary);
   border-radius: 0.8rem;
-  padding: 1.2rem;
+  padding: 1.4rem;
+  &::placeholder {
+    font-size: 1.2rem;
+  }
 }
 
 textarea {
@@ -51,6 +54,9 @@ textarea {
   border-radius: 0.8rem;
   padding: 1.2rem;
   height: 8.3rem;
+  &::placeholder {
+    font-size: 1.4rem;
+  }
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {
