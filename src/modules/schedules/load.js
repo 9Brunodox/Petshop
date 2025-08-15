@@ -21,7 +21,9 @@ export async function searchSchedules() {
 
   const dailySchedules = await fetchScheduleByDay({ date });
 
-  // Exibe os agendamentos
+  //Exibe os agendamentos
   scheduleShow({ dailySchedules });
 
+  // Exibe os agendamentos
+  scheduleShow({ dailySchedules });
 }
