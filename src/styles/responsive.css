@@ -1,0 +1,218 @@
+/* =========================
+   TABLET (≤ 1024px)
+   ========================= */
+@media (max-width: 1024px) {
+  /* Container e header principal */
+  main .schedule-container {
+    padding: 0 2rem;
+  }
+
+  main .schedule-container > header {
+    gap: 2rem;
+    padding: 2.4rem 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  /* Input de data do topo ocupa a largura toda */
+  #input-current-date {
+    width: 100%;
+    margin-top: 1.2rem;
+    padding: 1.2rem 1.6rem;
+  }
+
+  /* Cards de períodos */
+  .schedule-period .schedule-period-header {
+    padding: 1.2rem 1.6rem;
+  }
+
+  .schedule-period .schedule-period-header .timeHeader-1 {
+    margin-left: 0;
+  }
+
+  #schedule-content {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  .schedule-period .schedule-list {
+    padding: 1.2rem;
+  }
+
+  .schedule-item {
+    padding: 1.2rem !important;
+    gap: 1rem;
+  }
+
+  /* Evita deslocamento em telas menores */
+  .schedule-item .schedule-service {
+    margin-left: 0 !important;
+  }
+
+  /* Modal mais fluido no viewport */
+  .modal-content {
+    width: min(92vw, 47.7rem);
+    height: auto;
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 1rem;
+  }
+
+  .modal-header {
+    margin: 2.4rem 2rem 1.6rem 2rem;
+  }
+
+  .modal-form {
+    margin: 0 2rem;
+    gap: 1.2rem;
+  }
+
+  .dateAndHours {
+    gap: 1.2rem;
+  }
+}
+
+/* =========================
+     MOBILE (≤ 768px)
+     ========================= */
+@media (max-width: 768px) {
+  /* Marca e CTA */
+  #brand {
+    padding: 1rem 1.4rem;
+  }
+  #brand img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  #new-schedule {
+    right: 1.6rem;
+    bottom: calc(1.6rem + env(safe-area-inset-bottom, 0));
+    padding: 1.2rem 1.6rem;
+    /* Fonte um pouco menor reaproveitando tokens existentes */
+    font: var(--font-label-md);
+  }
+
+  /* Header principal em coluna */
+  main .schedule-container > header {
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2rem 0;
+  }
+
+  .schedule-period .schedule-period-header {
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+
+  .schedule-period .schedule-period-header .timeHeader-1 i img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .schedule-period .schedule-period-header .timeHeader-2 {
+    font: var(--font-label-md);
+    margin-right: 0;
+  }
+
+  #schedule-content {
+    margin-top: 1.6rem;
+    gap: 0.8rem;
+  }
+
+  /* Itens da agenda em coluna para melhor leitura */
+  .schedule-item {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .schedule-item > div {
+    flex-wrap: wrap;
+    gap: 0.8rem !important;
+  }
+
+  .schedule-item .schedule-service {
+    margin-left: 0 !important;
+  }
+
+  .schedule-remove {
+    align-self: flex-end;
+  }
+
+  /* Inputs com ícones e selects do modal */
+  .input-wrapper {
+    height: 4.4rem;
+    padding-left: 3rem;
+  }
+
+  .dateAndHours {
+    flex-direction: column; /* Data e Hora empilhados */
+  }
+
+  .hours-available {
+    gap: 1.2rem;
+  }
+
+  .hours-available #modal-time {
+    font: var(--font-paragraph-md);
+  }
+
+  /* Top date input do header */
+  #input-current-date input[type="date"] {
+    font: var(--font-paragraph-md);
+  }
+
+  /* Modal mais compacto */
+  .modal-content {
+    width: min(94vw, 44rem);
+    max-height: 88vh;
+  }
+}
+
+/* =========================
+     SMALL PHONES (≤ 480px)
+     ========================= */
+@media (max-width: 480px) {
+  /* Botão de ação ocupa mais espaço e respeita área segura */
+  #new-schedule {
+    position: fixed;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: calc(1.2rem + env(safe-area-inset-bottom, 0));
+    width: auto;
+    text-align: center;
+    padding: 1.4rem 1.6rem;
+  }
+
+  /* Modal full-viewport com rolagem suave */
+  .modal {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: 85vh;
+    border-radius: 0.8rem;
+  }
+
+  .footer-button {
+    margin-top: 1.6rem;
+  }
+
+  #confirmSchedule {
+    width: 100%;
+  }
+
+  /* Headers dos períodos com melhor quebra */
+  .schedule-period .schedule-period-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .schedule-period .schedule-period-header .timeHeader-2 {
+    margin-left: 0;
+  }
+}
