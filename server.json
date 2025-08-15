@@ -1,15 +1,7 @@
 {
   "schedules": [
     {
-      "id": 1754948372370,
-      "username": "Bruno",
-      "petname": "Tom",
-      "cleanedNumber": "11958892828",
-      "serviceDescription": "teste",
-      "when": "2025-08-11T13:00:00.000Z"
-    },
-    {
-      "id": 1754951686030,
+      "id": "1754951686030",
       "username": "Thor",
       "petname": "Asure",
       "cleanedNumber": "11958892828",
@@ -17,7 +9,7 @@
       "when": "2025-08-12T01:00:00.000Z"
     },
     {
-      "id": 1754954627692,
+      "id": "1754954627692",
       "username": "Bruno",
       "petname": "Tom",
       "cleanedNumber": "11958892828",

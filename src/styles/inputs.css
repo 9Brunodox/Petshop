@@ -4,6 +4,31 @@ input[type="date"] {
   -moz-appearance: none;
 }
 
+.modal input,
+.modal textarea {
+  &:hover {
+    border: 1px solid var(--border-secondary);
+  }
+  &:focus {
+    border: 1px solid var(--border-brand);
+  }
+}
+
+.hours-available:hover,
+.date-only:hover {
+  border: 1px solid var(--border-secondary);
+}
+
+.hours-available:focus-within,
+.date-only:focus-within {
+  border: 1px solid var(--border-brand);
+}
+
+.schedule-remove:hover {
+  color: var(--content-primary);
+  text-decoration: underline;
+}
+
 #input-current-date {
   position: relative;
   margin-top: 1rem;
