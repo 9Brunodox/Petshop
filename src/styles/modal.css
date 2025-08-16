@@ -152,6 +152,9 @@
   text-align: center;
   align-items: end;
   padding: 1.6rem 1.2rem;
+  &:hover {
+    background-color: #bdb4fa;
+  }
 }
 
 .footer-button {
